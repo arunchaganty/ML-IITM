@@ -1,0 +1,20 @@
+
+{% load endless %}
+
+{% lazy_paginate 3 news_items %}
+{% for item in news_items %}
+  <div class="news-article rowborder">
+    <h3>
+      <a href="{%if item.link%} {{item.link}} {%else%} {{SITE_URL}}/news/{{item.id}}/ {%endif%}">{{item.name}}</a> 
+    </h3> 
+    {{item.content}}
+    <div class="right info"> Posted {{item.timestamp}} &middot; <a href="#top">Top</a> </div>
+    <div class="clear"></div>
+  </div>
+{% empty %}
+  <div class="news-article">
+    <p>Sorry, no more news</p>
+  </div>
+{% endfor %}
+{% show_more %}
+

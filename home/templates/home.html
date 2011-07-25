@@ -1,9 +1,34 @@
 {% extends "base.html" %}
 
 {% block body %}
-        <p id="description">
-        <b>Webbed Feet</b> is a <i>competition judge</i> created to evaluate AI bots created for the <a href="http://www.cse.iitm.ac.in/~cs638/">"Artificial Intelligence"</a> course taken by <a href="http://aidblab.cse.iitm.ac.in/khemani/">Dr. Deepak Khemani</a>. It was also used as the judge for <a href="http://www.shaastra.org/2010/main/events/coding/automania">Automania</a> at Shaastra 2010. You can obtain the source code for the judge <a href="http://github.com/arunchaganty/webbed-feet">here</a>.
-        </p>
+<div class="span-16 append-1 colborder">
+  <h2>Home</h2>
+<p id="description">
+  Welcome to the Computational Learning Group at IIT Madras. 
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</div>
+<div class="span-6">
+  <h2>News</h2>
+  <ul>
+    {% for item in news_items %}
+    <li>
+    {% if item.internal %}
+    <a href="{%if item.link%} {{item.link}} {%else%} # {%endif%}">{{item.name}}</a> 
+    {% else %}
+      <a href="{{SITE_URL}}/news/{{item.id}}/">{{item.name}}</a> 
+    {% endif %}
+    <span class="small">{{item.timestamp}} </span>
+    </li>
+    {% empty %}
+    <li>We have no news for you yet</li>
+    {% endfor %}
+    <li><a href="{{SITE_URL}}/news/">More...</a></li>
+  </ul>
+
+</div>
 {% endblock %}
 
 

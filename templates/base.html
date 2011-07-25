@@ -20,6 +20,9 @@
     <!-- Google WebFonts -->
     <link href='http://fonts.googleapis.com/css?family=Rosario&v2' rel='stylesheet' type='text/css'>
 
+      {% block js %}
+      {% endblock %}
+
   </head>
   <body>
     <div id="header" class="container">
@@ -39,6 +42,7 @@
     <div id="linkbar" class="container">
       <ul class="joomla-nav center">
         <li><a href="{{SITE_URL}}/">Home</a></li>
+        <li><a href="{{SITE_URL}}/news/">News</a></li>
         <li><a href="{{SITE_URL}}/people/">People</a></li>
         <li><a href="{{SITE_URL}}/publications/">Publications</a></li>
         <li><a href="{{SITE_URL}}/projects/">Projects</a></li>
@@ -60,7 +64,7 @@
 
     <div id="footer" class="container">
       <span class="right">
-      &copy; <a class="plain" href="http://www.cse.iitm.ac.in/">Deptt. of Computer Science and Engineering, IIT Madras</a>
+        &copy; <a class="plain" href="http://www.cse.iitm.ac.in/">Deptt. of Computer Science and Engineering, IIT Madras</a> &middot; <a href="http://github.com/arunchaganty/ML-IITM">Under the Hood</a>
     </span>
     </div>
   </body>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h2><a href="{{SITE_URL}}/news/">News</a> &gt; <a href="{%if item.link%} {{item.link}} {%else%} # {%endif%}">{{item.name}}</a> </h2>
+  <div class="news-article rowborder">
+    {{item.content}}
+    <div class="right info"> Posted {{item.timestamp}}</div>
+    <div class="clear"></div>
+  </div>
+{% endblock %}
