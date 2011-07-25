@@ -1,0 +1,11 @@
+
+# Djano files
+settings.py
+
+# Temporary Files
+*.swp
+*.swo
+*.pyc
+*.o
+*.so
+*~

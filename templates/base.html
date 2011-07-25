@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Computational Learning Group - Deptt. of CSE, IIT Madras</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="top" title="Computational Learning Group - Deptt. of CSE, IIT Madras" href="{{SITE_URL}}" />
+    <link rel="icon" href="{{MEDIA_URL}}/images/favicon.ico" type="image/x-icon" />
+
+
+    <!-- The following five lines load the Blueprint CSS Framework (http://blueprintcss.org). If you don't want to use this framework, delete these lines. -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{MEDIA_URL}}/css/blueprint/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="{{MEDIA_URL}}/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{MEDIA_URL}}/css/blueprint/plugins/joomla-nav/screen.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="{{MEDIA_URL}}/css/style.css" type="text/css" ></link>
+
+    <!-- Google WebFonts -->
+    <link href='http://fonts.googleapis.com/css?family=Rosario&v2' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <div id="header" class="container">
+      <hr class="space" />
+      <table>
+        <tr>
+          <td class="span-3 append-1">
+            <img src="{{MEDIA_URL}}/images/logo.png" />
+          </td>
+          <td class="span-18 large">
+            <h1>Computational Learning Group</h1>
+            <h3>Deptt. of Computer Science and Engineering</h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="linkbar" class="container">
+      <ul class="joomla-nav center">
+        <li><a href="{{SITE_URL}}/">Home</a></li>
+        <li><a href="{{SITE_URL}}/people/">People</a></li>
+        <li><a href="{{SITE_URL}}/publications/">Publications</a></li>
+        <li><a href="{{SITE_URL}}/projects/">Projects</a></li>
+        <li><a href="{{SITE_URL}}/events/">Events</a></li>
+
+        {% if user.is_superuser %}
+        <li><a href="{{SITE_URL}}/admin/">Administer</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li><a href="{{SITE_URL}}/logout/">Logout</a> </li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <div id="body" class="container">
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <div id="footer" class="container">
+      <span class="right">
+      &copy; <a class="plain" href="http://www.cse.iitm.ac.in/">Deptt. of Computer Science and Engineering, IIT Madras</a>
+    </span>
+    </div>
+  </body>
+</html>
+
